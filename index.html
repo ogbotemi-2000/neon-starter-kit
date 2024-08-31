@@ -52,6 +52,9 @@ asText: function(node, inputs, txt='', cb) {
 </script>
 
 <style>
+.bg-near-black {
+  background: #282828;
+}
 .affix {
   position: fixed;
   top: 1em;
@@ -199,7 +202,7 @@ asText: function(node, inputs, txt='', cb) {
 <div class="hover:bg-green-100 mt-3 m-2 mx-1 relative inline-block  p-2 px-3 rounded-3xl bg-gray-100 ripple backdrop-filter backdrop-blur ripple text-current">
   <i class="fa fa-cog inline-block align-middle pointer-events-none"></i>
   <i class="fa fa-database inline-block align-middle mr-2 pointer-events-none"></i>apply query to database</div></button>
-  <div class="inline-block no-hover no-focus slide tooltip">
+  <div class="ml-4 inline-block no-hover no-focus slide tooltip">
     <svg class="mr-1 inline-block w-8 align-middle text-red-600" viewBox="0 0 384 512">
       <path pathLength="1" style="fill:orange;" class="draw-stroke" stroke-width="30" stroke="currentColor" d="M216 23.86c0-23.8-30.65-32.77-44.15-13.04C48 191.85 224 200 224 288c0 35.63-29.11 64.46-64.85 63.99-35.17-.45-63.15-29.77-63.15-64.94v-85.51c0-21.7-26.47-32.23-41.43-16.5C27.8 213.16 0 261.33 0 320c0 105.87 86.13 192 192 192s192-86.13 192-192c0-170.29-168-193-168-296.14z"></path>
     </svg>
@@ -227,7 +230,7 @@ asText: function(node, inputs, txt='', cb) {
       </div>
     </aside>
 
-    <div class="fixed right-0 bottom-0 p-5 text-center rounded-t-3xl bg-green-100 text-xs">Built for the <a href="https://dev.to/challenges/neon">Neon starter kit challenge</a</div>
+    <a target="_blank" href="https://dev.to/challenges/neon" class="fixed right-0 bottom-0 px-5 py-3 text-center rounded-t-3xl bg-near-black text-green-400 text-sm">Built for the ulitmate <img class="inline-block" src="neon.svg"> starter kit challenge ↗</a>
     <!-- iframe for receiving responses for the submitted form above -->
     <iframe frameborder="0" class="invisible pointer-events-none absolute top-0 " id="response" name="response" onload="let res; (res=this.contentWindow.document.body.textContent)&&receive(res)"></iframe>
 <script>

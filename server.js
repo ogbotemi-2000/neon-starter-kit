@@ -6,6 +6,7 @@ if(!fs.existsSync('./config.json')) console.warn("::Create a `config.json` file 
 
 let path   = require('path'),
     config = require('./config.json'),
+    mime   = require('mime-types'),
     jobs   = {
       GET:function(req, res, parts, fxn) {
         /** middlewares that respond to GET requests are called here */
@@ -27,7 +28,6 @@ let path   = require('path'),
         return !!fxn||bool;
       }
     },
-    mime   = { js: 'application/javascript', css: 'text/css', html:'text/html' },
     cache  = {}; /** to store the strings of data read from files */
 
 http.createServer((req, res, url, parts, data, verb)=>{
@@ -48,7 +48,7 @@ http.createServer((req, res, url, parts, data, verb)=>{
   }).then(cached=>{
     res.writeHead(200, {
       'Access-Control-Allow-Origin': '*',
-      'Content-type': mime[url.split('.').pop()]||''
+      'Content-type': mime.lookup(url) || 'application/octet-stream'
    }),
    /** return dynamic data or static file that was read */
     // console.log("::PROMISE", [url]),
