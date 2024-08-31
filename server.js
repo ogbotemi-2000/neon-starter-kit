@@ -1,6 +1,10 @@
+
 let http   = require('http'),
-    fs     = require('fs'),
-    path   = require('path'),
+    fs     = require('fs');
+
+if(!fs.existsSync('./config.json')) console.warn("::Create a `config.json` file with the fields required for a neondatabase for proper behaviour"), process.exit();
+
+let path   = require('path'),
     config = require('./config.json'),
     jobs   = {
       GET:function(req, res, parts, fxn) {
@@ -54,7 +58,7 @@ http.createServer((req, res, url, parts, data, verb)=>{
     // console.error(str='::ERROR:: '+err, [url])
     res.end(str)
   })
-}).listen(config.PORT, _=>{
+}).listen(config.PORT||=3000, _=>{
   console.log(`Server listening on PORT ${config.PORT}`)
 })
 
