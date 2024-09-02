@@ -66,3 +66,4 @@ npm run dev
 ### Awareness
 + The server exits with a console warning if `config.json` is not available, the `PORT` you define in `config.json` is used or `3000` is used if it is not defined.
 + The Node.js sever doesn't support `vercel.json` since it is just a simple HTTP server built for speed and interoperability with Vercel functions
++ > Tip: The lines of text in the editor can be copied and pasted with their formatting retained! You can use this feature to create multiple fields.
