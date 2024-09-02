@@ -1,8 +1,10 @@
 # neon-starter-kit
 A starter kit for users using Node.js and/or Vercel serverless for getting started with or extending connecting and interacting with their PostgreSQL or MySQL databases hosted by direct effort or abstracted away via serverless SAAS like https://neon.tech
 
+https://github.com/user-attachments/assets/76a37d61-23df-4a4a-a811-48cae1632a53
+
 ### Features
-- [x] A Node.js server with dynamic support for routes to `api/` endpoints
+- [x] A `HTTP` Node.js server with dynamic support for middlewares and routes to `api/` endpoints
 - [x] Compatibility with Vercel serverless functions
 - [x] Custom configuration via config.json
 - [x] A user interface for complete interaction with database
@@ -63,4 +65,4 @@ npm run dev
 ```
 ### Awareness
 + The server exits with a console warning if `config.json` is not available, the `PORT` you define in `config.json` is used or `3000` is used if it is not defined.
-+ The Node.js sever doesn't support `vercel.json` since it is just a simple HTTP server built for speed and interoperability
++ The Node.js sever doesn't support `vercel.json` since it is just a simple HTTP server built for speed and interoperability with Vercel functions
